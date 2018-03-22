@@ -1,0 +1,30 @@
+-- This file has been generated from package.yaml by hpack version 0.20.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 2219e77927f6d58296bde6deaebfd7671cc852bb40fddb326362b01e86314bbc
+
+name:           rbtbench
+version:        0.1.0.0
+description:    A simple red-black tree benchmark.
+author:         Xuanrui Qi
+maintainer:     xuanrui.qi@tufts.edu
+copyright:      2018 Xuanrui Qi
+build-type:     Simple
+cabal-version:  >= 1.10
+
+library
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  exposed-modules: RedBlackTree
+  default-language: Haskell2010
+
+executable bench
+  main-is: Bench.hs
+  hs-source-dirs: src, app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends: base >=4.7 && <5, rbtbench
+  other-modules: RedBlackTree
+  default-language: Haskell2010
